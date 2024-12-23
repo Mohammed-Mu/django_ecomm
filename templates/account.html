@@ -5,8 +5,7 @@
 
 {% endblock banner%}
 {% block content%}
-
-    <!-- Feadtued Categories -->
+<!-- Feadtued Categories -->
 {% block extra_scripts %}
 <script>
     var LoginForm = document.getElementById("LoginForm");
@@ -25,6 +24,14 @@
 
     }
 </script>
-{% endblock %}
-
+{% if register %}
+    <script>
+        register()
+    </script>
+    {% else %}
+    <script>
+        login()
+    </script>
+    {% endif %}
+    {% endblock %}
 {% endblock content %}
