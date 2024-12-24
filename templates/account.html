@@ -1,37 +1,38 @@
 {% extends 'blank_layout.html' %}
 {% block banner %}
-
-{% include 'account_banner.html '%}
-
-{% endblock banner%}
-{% block content%}
-<!-- Feadtued Categories -->
+{% include 'account_banner.html' %}
+{% endblock banner %}
+{% block content %}
 {% block extra_scripts %}
 <script>
-    var LoginForm = document.getElementById("LoginForm");
-    var RegForm = document.getElementById("RegForm");
-    var Indicator = document.getElementById("Indicator");
+    const LoginForm = document.getElementById("LoginForm");
+    const RegForm = document.getElementById("RegForm");
+    const Indicator = document.getElementById("Indicator");
+
     function register() {
         RegForm.style.transform = "translatex(0px)";
         LoginForm.style.transform = "translatex(0px)";
         Indicator.style.transform = "translateX(100px)";
-
     }
+
     function login() {
         RegForm.style.transform = "translatex(300px)";
         LoginForm.style.transform = "translatex(300px)";
         Indicator.style.transform = "translate(0px)";
-
     }
+
+    // Initialize form state based on server-side context
 </script>
-{% if register %}
-    <script>
-        register()
-    </script>
+    {% if register %}
+        <script>
+            register();
+        </script>
     {% else %}
-    <script>
-        login()
-    </script>
+        <script>
+        login();
+        </script>
+        
     {% endif %}
-    {% endblock %}
+
+{% endblock %}
 {% endblock content %}
