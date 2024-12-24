@@ -12,8 +12,6 @@ __pycache__/
 
 # Django stuff:
 *.log
-db.sqlite3
-media/
 */migrations/*.py
 !*/migrations/__init__.py
 
